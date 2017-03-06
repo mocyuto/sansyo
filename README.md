@@ -1,0 +1,2 @@
+# sansyo
+Scala small library
