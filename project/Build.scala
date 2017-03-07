@@ -10,7 +10,8 @@ object build {
   Seq(
     organization := "com.github.mocyuto",
     version      := "0.1.0",
-    crossScalaVersions := Scala211 :: "2.12.1" :: Nil,
+    scalaVersion := Scala211,
+    crossScalaVersions := "2.10.5" :: Scala211 :: "2.12.1" :: Nil,
     name := "sansyo",
     libraryDependencies ++= Seq(
       scalaTest

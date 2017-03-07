@@ -2,7 +2,7 @@ package com.github.mocyuto
 
 import scala.collection.mutable.ArrayBuffer
 
-class SeqUtils {
+object SeqUtils {
   implicit class PartMap[A](seq: Seq[A]) {
 
     /**

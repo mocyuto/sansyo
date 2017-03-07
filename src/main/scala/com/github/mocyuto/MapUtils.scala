@@ -2,7 +2,7 @@ package com.github.mocyuto
 
 import scala.collection.mutable
 
-class MapUtils {
+object MapUtils {
 
   implicit class tuple2map[A, B](tupleSeq: Seq[(A, B)]) {
 

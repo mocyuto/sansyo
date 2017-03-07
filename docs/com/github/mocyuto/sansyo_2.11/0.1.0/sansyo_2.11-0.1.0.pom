@@ -1,20 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>default</groupId>
-    <artifactId>sansyo_2.10</artifactId>
+    <groupId>com.github.mocyuto</groupId>
+    <artifactId>sansyo_2.11</artifactId>
     <packaging>jar</packaging>
     <description>sansyo</description>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1.0</version>
     <name>sansyo</name>
     <organization>
-        <name>default</name>
+        <name>com.github.mocyuto</name>
     </organization>
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.10.6</version>
+            <version>2.11.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>3.0.1</version>
         </dependency>
     </dependencies>
 </project>
