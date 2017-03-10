@@ -1,5 +1,8 @@
 # sansyo
 
+[![Build Status](https://travis-ci.org/moc-yuto/sansyo.png)](https://travis-ci.org/moc-yuto/sansyo)
+
+
 This library is for Scala collections utility.  
 "sansyo(山椒)" means Japanese pepper.
 
