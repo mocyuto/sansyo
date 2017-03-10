@@ -1,15 +1,21 @@
 import sbt._
 import Keys._
+import sbtrelease._
+import ReleaseStateTransformations._
+import sbtrelease.ReleasePlugin.autoImport._
 
 object build {
   lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1"
 
   private[this] val Scala211 = "2.11.8"
 
+  private[this] val tagName = Def.setting{
+    s"v${if (releaseUseGlobalVersion.value) (version in ThisBuild).value else version.value}"
+  }
+
   lazy val commonSettings =
   Seq(
     organization := "com.github.moc-yuto",
-    version      := "0.1.0",
     scalaVersion := Scala211,
     crossScalaVersions := "2.10.5" :: Scala211 :: "2.12.1" :: Nil,
     name := "sansyo",
@@ -22,7 +28,7 @@ object build {
         sys.error("Working directory is dirty!\n" + diff)
       }
     }
-  ) ++ appPublishSettings
+  ) ++ appPublishSettings ++ releaseSettings
 
   lazy val appPublishSettings = Seq(
     publishMavenStyle := true,
@@ -55,6 +61,23 @@ object build {
             <url>http://github.com/moc-yuto</url>
           </developer>
         </developers>)
+  )
+
+  lazy val releaseSettings = Seq(
+    releaseProcess := Seq[ReleaseStep](
+      checkSnapshotDependencies,
+      inquireVersions,
+      runClean,
+      runTest,
+      setReleaseVersion,
+      commitReleaseVersion,
+      tagRelease,
+      ReleaseStep(action = Command.process("publishSigned", _), enableCrossBuild = true),
+      setNextVersion,
+      commitNextVersion,
+      ReleaseStep(action = Command.process("sonatypeReleaseAll", _), enableCrossBuild = true),
+      pushChanges
+    )
   )
 
 }
