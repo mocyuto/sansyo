@@ -15,7 +15,13 @@ object build {
     name := "sansyo",
     libraryDependencies ++= Seq(
       scalaTest
-    )
+    ),
+    TaskKey[Unit]("checkScalariform") := {
+      val diff = "git diff".!!
+      if(diff.nonEmpty){
+        sys.error("Working directory is dirty!\n" + diff)
+      }
+    }
   ) ++ appPublishSettings
 
   lazy val appPublishSettings = Seq(
