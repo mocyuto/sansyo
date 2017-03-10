@@ -13,7 +13,7 @@ add Resolver and Dependency in build.sbt
 
 ```scala
 resolvers += "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases/"
-libraryDependency += "com.github.moc-yuto"  %% "sansyo"               % "0.1.0"
+libraryDependency += "com.github.moc-yuto"  %% "sansyo"               % "0.1.1"
 ```
 
 
