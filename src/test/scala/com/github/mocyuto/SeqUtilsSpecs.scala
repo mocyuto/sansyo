@@ -28,6 +28,6 @@ class SeqUtilsSpecs extends FlatSpec with Matchers {
   }
 
   "partitionMap" should "two Seq tuple" in {
-    Seq(1,2,3).partitionMap(_ > 1)(_ + 1) shouldBe (Seq(3, 4), Seq(2))
+    Seq(1, 2, 3).partitionMap(_ > 1)(_ + 1) shouldBe (Seq(3, 4), Seq(2))
   }
 }
