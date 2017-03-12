@@ -5,7 +5,7 @@ import ReleaseStateTransformations._
 import sbtrelease.ReleasePlugin.autoImport._
 
 object build {
-  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1"
+  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 
   private[this] val Scala211 = "2.11.8"
 
