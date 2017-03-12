@@ -14,7 +14,7 @@ class SeqUtilsSpecs extends FlatSpec with Matchers {
   }
 
   "Empty Seq" should "return argument" in {
-    assert(Nil.emptyOrElse(Seq(0)) == Seq(0))
+    assert(Seq[Int]().emptyOrElse(Seq(0)) == Seq(0))
   }
 
   it should "throw Exception" in {
