@@ -1,6 +1,6 @@
 # sansyo
 
-[![Build Status](https://travis-ci.org/moc-yuto/sansyo.png)](https://travis-ci.org/moc-yuto/sansyo)
+[![Build Status](https://travis-ci.org/moc-yuto/sansyo.svg?branch=master)](https://travis-ci.org/moc-yuto/sansyo)
 
 
 This library is for Scala collections utility.  
