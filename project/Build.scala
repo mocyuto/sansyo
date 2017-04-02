@@ -12,6 +12,7 @@ object build {
   private[this] val tagName = Def.setting{
     s"v${if (releaseUseGlobalVersion.value) (version in ThisBuild).value else version.value}"
   }
+  val modules = "sansyo" :: Nil
 
   lazy val commonSettings =
   Seq(
@@ -71,6 +72,7 @@ object build {
       runTest,
       setReleaseVersion,
       commitReleaseVersion,
+      UpdateReadme.updateReadmeProcess,
       tagRelease,
       ReleaseStep(action = Command.process("publishSigned", _), enableCrossBuild = true),
       setNextVersion,
