@@ -19,15 +19,15 @@ libraryDependency += "com.github.moc-yuto"  %% "sansyo"               % "0.1.1"
 
 ## Quick Start
 
-emptyOrElse
+filledOrElse
 ```scala
 import com.github.mocyuto.SeqUtils._
 
 val seq = Seq(1,2,3)
 val emptySeq = Seq()
 
-seq.emptyOrElse(Seq(0)) // Seq(1,2,3)
-emptySeq.emptyOrElse(Seq(0)) // Seq(0)
+seq.filledOrElse(Seq(0)) // Seq(1,2,3)
+emptySeq.filledOrElse(Seq(0)) // Seq(0)
 
 ```
 

@@ -22,10 +22,14 @@ object SeqUtils {
      * return the result of evaluating `alterSeq`.
      * @param alterSeq the default expression.
      */
-    def emptyOrElse(alterSeq: => Seq[A]): Seq[A] = {
+    def filledOrElse(alterSeq: => Seq[A]): Seq[A] = {
       if (seq.isEmpty) alterSeq
       else seq
     }
 
+    @deprecated("fix to filledOrElse. will remove at 0.3", "0.2")
+    def emptyOrElse(alterSeq: => Seq[A]): Seq[A] = {
+      filledOrElse(alterSeq)
+    }
   }
 }
