@@ -8,11 +8,9 @@ object UpdateReadme {
 
   val updateReadmeTask = { state: State =>
     val extracted = Project.extract(state)
-    val scalaV = extracted get scalaBinaryVersion
     val v = extracted get version
     val org =  extracted get organization
     val modules = build.modules
-    val snapshotOrRelease = if(extracted get isSnapshot) "snapshots" else "releases"
     val readme = "README.md"
     val readmeFile = file(readme)
     val newReadme = Predef.augmentString(IO.read(readmeFile)).lines.map{ line =>
