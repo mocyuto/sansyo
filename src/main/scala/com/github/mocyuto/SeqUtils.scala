@@ -27,5 +27,9 @@ object SeqUtils {
       else seq
     }
 
+    @deprecated("fix to filledOrElse. will remove at 0.3", "0.2")
+    def emptyOrElse(alterSeq: => Seq[A]): Seq[A] = {
+      filledOrElse(alterSeq)
+    }
   }
 }
